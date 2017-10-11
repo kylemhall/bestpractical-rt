@@ -8,15 +8,15 @@
     "compile": "babel --presets es2015,stage-0 -d lib/ src/",
     "prepublish": "npm run compile"
   },
-  "author": "Benedicte Emilie Brækken <b@brkn.io> (https://personer.uio.no/benedebr)",
+  "author": "Kyle M Hall <kyle@kylehall.info>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/benedicteb/bestpractical-rt.git"
+    "url": "https://github.com/kylemhall/bestpractical-rt"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/benedicteb/bestpractical-rt/blob/master/LICENSE"
+      "url": "https://github.com/kylemhall/bestpractical-rt/blob/master/LICENSE"
     }
   ],
   "dependencies": {
