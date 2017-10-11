@@ -153,6 +153,27 @@ class RT {
     this._loginThenQuery(getHistoryEntry);
   }
 
+  updateTicketProperties(ticketId, properties, callback) {
+      const updateTicketInfo = function () {
+
+        let content = "";
+        Object.keys(properties).forEach(function(property) {
+            content += property + ": " + properties[property] + "\n";
+        });
+
+        const form = {content: content};
+
+        request.post({
+          url: urljoin(this.uribase, 'ticket', ticketId, 'edit'),
+          form: form
+        }, function (error, response, body) {
+          callback(body);
+        });
+      }.bind(this);
+
+      this._loginThenQuery(updateTicketInfo);
+  }
+
   _loginThenQuery(callback) {
     if (!this.loggedIn) {
       this.login(callback);
